@@ -1,5 +1,7 @@
 FROM alpine:3.15
 
+LABEL org.opencontainers.image.source = "https://github.com/solarnz/docker-powerdns"
+
 RUN apk add --no-cache \
     pdns-recursor \
     py3-pip \
