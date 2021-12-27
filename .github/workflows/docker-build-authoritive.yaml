@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        backend: ["bind", "ldap", "lua2", "mariadb", "mysql", "odbc", "pgsql", "pipe", "random", "remote", "sqlite"]
+        backend: ["bind", "ldap", "lua2", "mariadb", "mysql", "odbc", "pgsql", "pipe", "random", "remote", "sqlite3"]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
