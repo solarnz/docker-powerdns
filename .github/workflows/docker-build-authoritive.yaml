@@ -4,13 +4,12 @@ on:
   push:
   pull_request:
 
-strategy:
-  matrix:
-    backend: ["bind", "ldap", "lua2", "mariadb", "mysql", "odbc", "pgsql", "pipe", "random", "remote", "sqlite"]
-
 jobs:
   docker:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        backend: ["bind", "ldap", "lua2", "mariadb", "mysql", "odbc", "pgsql", "pipe", "random", "remote", "sqlite"]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
