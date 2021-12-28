@@ -13,6 +13,6 @@ RUN mkdir -p /etc/pdns/api.d \
 
 EXPOSE 53 53/udp
 
-COPY recursor.conf /
+COPY recursor.conf /etc/pdns/
 
 CMD [ "/usr/sbin/pdns_recursor" ]
