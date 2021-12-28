@@ -1,0 +1,5 @@
+{
+    "extends": ["config:base", ":enableRenovate"],
+    "ignorePresets": [":prHourlyLimit2"],
+    "reviewers": ["solarnz"]
+}
