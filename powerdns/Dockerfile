@@ -6,11 +6,7 @@ ARG BACKEND
 
 RUN apk add --no-cache \
     pdns \
-    pdns-backend-$BACKEND \
-    py3-pip \
-    python3
-
-RUN pip3 install --no-cache-dir envtpl
+    pdns-backend-$BACKEND
 
 RUN mkdir -p /etc/pdns/api.d \
   && chown -R pdns: /etc/pdns/api.d \
@@ -18,18 +14,10 @@ RUN mkdir -p /etc/pdns/api.d \
   && chown -R pdns: /var/run/pdns \
   && mkdir -p /etc/pdns/pdns.d
 
-ENV VERSION=4.4 \
-  PDNS_setuid=pdns \
-  PDNS_setgid=pdns \
-  PDNS_daemon=no \
-  PDNS_launch=$BACKEND \
-  PDNS_include_dir=/etc/pdns/pdns.d
+RUN echo launch=$BACKEND > /etc/pdns/pdns.d/00-default.conf
 
 EXPOSE 53 53/udp
 
-COPY pdns.conf.tpl /
-COPY docker-entrypoint.sh /
-
-ENTRYPOINT [ "/docker-entrypoint.sh" ]
+COPY pdns.conf /etc/pdns/pdns.conf
 
 CMD [ "/usr/sbin/pdns_server" ]
