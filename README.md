@@ -19,6 +19,8 @@ Backends available:
 - remote
 - sqlite3
 
+There is also an image tagged `all` that includes all powerdns backends in the alpine repositories.
+
 ```
 docker pull ghcr.io/solarnz/powerdns:<BACKEND>
 ```
