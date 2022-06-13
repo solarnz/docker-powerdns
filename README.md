@@ -15,7 +15,6 @@ Backends available:
 - odbc
 - pgsql
 - pipe
-- random
 - remote
 - sqlite3
 
