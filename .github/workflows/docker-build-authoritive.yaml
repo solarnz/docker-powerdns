@@ -15,7 +15,7 @@ jobs:
         backend: ["all", "bind", "ldap", "lua2", "mariadb", "mysql", "odbc", "pgsql", "pipe", "remote", "sqlite3"]
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
